@@ -1,0 +1,275 @@
+/* Reset y configuracion base*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:monospace;
+    background-color: #f5f5f5;
+}
+
+/*header*/
+.header{
+    background-color: #4a4a4a;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_left{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav_links{
+    display: flex;
+    gap: 20px;
+}
+
+.nav_links a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav_links a:hover{
+    opacity: 0.8;
+}
+
+.close_session{
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/*Contenedor principal*/
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 30px;
+}
+
+/* Seccion Perfil*/
+.profile_section{
+    background: white;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile_header{
+    background: linear-gradient(135deg, #00bcd4,#26c6da);
+    height: 120px;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+
+.profile_avatar{
+    position: absolute;
+    bottom: -30px;
+    left: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid white;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+.profile_avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile_info{
+    padding: 50px 30px 30px;
+}
+
+.profile_name{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.profile_details{
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.edit_profile{
+    color: #00bcd4;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit_profile:hover{
+    text-decoration: underline;
+}
+
+.education_section{
+    padding: 30px;
+    border-top: 1px solid #eee;
+}
+
+.education_title{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.education_details{
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/*Sección Conexiones*/
+.connection_section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.connection_request, .all_connections{
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section_title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.connection_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.connection_item:last-child{
+    border-bottom: none;
+}
+
+.connection_info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.connection_avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+.connection_avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.connection_name{
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.connection_actions{
+    display: flex;
+    grid-area: 10px;
+}
+
+.btn_accept, .btn_reject{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.btn-accept {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-reject {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-accept:hover {
+    background-color: #45a049;
+}
+
+.btn-reject:hover {
+    background-color: #da190b;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-left {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .profile-info {
+        padding: 50px 20px 20px;
+    }
+    
+    .education-section {
+        padding: 20px;
+    }
+    
+    .connection-requests, .all-connections {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil de Francisco</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!--header-->
+    <header class="header">
+      <div class="nav_left">
+        <div class="logo">Perfil de Francisco</div>
+        <nav class="nav_links">
+          <a href="#">Inicio</a>
+          <a href="#">Mi Perfil</a>
+          <a href="#">Encontrar Conexiones</a>
+        </nav>
+      </div>
+      <button class="close_session">Cerrar Sesión</button>
+    </header>
+
+    <!--Contenedor principal-->
+    <div class="container">
+      <!--sección del perfil-->
+      <div class="profile_section">
+        <div class="profile_header">
+          <div class="profile_avatar">
+            <img src="./assets/img/perfilcropped.png" alt="Francisco Valencia" />
+          </div>
+        </div>
+
+        <div class="profile_info">
+          <h1 class="profile_name">Francisco Valencia</h1>
+          <div class="profile_details">
+            Santiago, Chile <br />
+            FullStack Java Trainee | Antropologo <br />
+            Aprendiendo constantemente.
+          </div>
+          <a href="#" class="edit_profile"> 🔗 Editar Perfil </a>
+        </div>
+
+        <div class="education_section">
+          <h2 class="education_title">Educación</h2>
+          <div class="education_details">
+            Bootcamp Java FullStack trainee <br />
+            2025
+          </div>
+        </div>
+      </div>
+
+      <!--Sección de conexiones-->
+      <div class="connection_section">
+        <!--solicitudes de conexión-->
+        <div class="connection_request">
+          <h2 class="section_title">Solicitudes de Conexión(<span class="solicitudes-count"></span>)</h2>
+
+          <div class="connection_item">
+            <div class="connection_info">
+              <div class="connection_avatar">
+                <img src="./assets/img/sogeking.png" alt="sogeking" />
+              </div>
+              <span class="connection_name">Sogeking</span>
+            </div>
+            <div class="connection_actions">
+              <button class="btn_accept">✓</button>
+              <button class="btn_reject">✕</button>
+            </div>
+          </div>
+          <div class="connection_item">
+            <div class="connection_info">
+              <div class="connection_avatar">
+                <img src="./assets/img/erenj.png" alt="" />
+              </div>
+              <span class="connection_name">Eren Jaeger</span>
+            </div>
+            <div class="connection_actions">
+              <button class="btn_accept">✓</button>
+              <button class="btn_reject">✕</button>
+            </div>
+          </div>
+        </div>
+
+        <!--todas las conexiones-->
+        <div class="all_connections">
+          <h2 class="section_title">Tus Conexiones(<span class="conexiones-count"></span>)</h2>
+
+          <div class="connection_item">
+            <div class="connection_info">
+              <div class="connection_avatar">
+                <img src="./assets/img/hanamichi.png" alt="hanamichi sakuragi" />
+              </div>
+              <span class="connection_name">Hanamichi Rey Basketman</span>
+            </div>
+          </div>
+
+          <div class="connection_item">
+            <div class="connection_info">
+              <div class="connection_avatar">
+                <img src="./assets/img/guts.png" alt="guts" />
+              </div>
+              <span class="connection_name">Guts el Berserk</span>
+            </div>
+          </div>
+
+          <div class="connection_item">
+            <div class="connection_info">
+              <div class="connection_avatar">
+                <img src="./assets/img/senitzu.png" alt="senitzu" />
+              </div>
+              <span class="connection_name">Senitzu Dios del Rayo</span>
+            </div>
+          </div>
+
+          <div class="connection_item">
+            <div class="connection_info">
+              <div class="connection_avatar">
+                <img src="./assets/img/gauama.png" alt="gautama" />
+              </div>
+              <span class="connection_name">Gautama</span>
+            </div>
+          </div>
+
+          <div class="connection_item">
+            <div class="connection_info">
+              <div class="connection_avatar">
+                <img src="./assets/img/beelzebub.png" alt="beelzebub" />
+              </div>
+              <span class="connection_name">Beelzebub Príncipe</span>
+            </div>
+          </div>
+
+          <div class="connection_item">
+            <div class="connection_info">
+              <div class="connection_avatar">
+                <img src="./assets/img/ikki.png" alt="ikki el fenix" />
+              </div>
+              <span class="connection_name">Ikki el ave Fénix</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/profile.js"></script>
+  </body>
+</html>
