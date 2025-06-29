@@ -1,80 +1,61 @@
-//COntadores solicitudes
-let solicitudesCount = document.querySelector(".solicitudes-count");
-let conexionesCount = document.querySelector(".conexiones-count");
+$(document).ready(function () {
+  let $solicitudesCount = $(".solicitudes-count");
+  let $conexionesCount = $(".conexiones-count");
 
-//Inicializar valores DOM
-let solicitudes = document.querySelectorAll(
-  ".connection_request .connection_item"
-).length;
-let conexiones = document.querySelectorAll(
-  ".all_connections .connection_item"
-).length;
+  let solicitudes = $(".connection_request .connection_item").length;
+  let conexiones = $(".all_connections .connection_item").length;
 
-//Mostrar valores iniciales
-solicitudesCount.textContent = solicitudes;
-conexionesCount.textContent = conexiones;
+  $solicitudesCount.text(solicitudes);
+  $conexionesCount.text(conexiones);
 
-//Botones aceptar/rechazar
-let aceptarBtns = document.querySelectorAll(".btn_accept");
-let rechazarBtns = document.querySelectorAll(".btn_reject");
+  $(".btn_accept").on("click", function () {
+    let $item = $(this).closest(".connection_item");
+    let nombre = $item.find(".connection_name").text();
+    let avatar = $item.find("img").attr("src");
 
-//Asignacion de eventos.
+    $item.remove();
 
-aceptarBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    let item = btn.closest(".connection_item");
-
-    //info del contacto
-    let nombre = item.querySelector(".connection_name").textContent;
-    let avatar = item.querySelector("img").getAttribute("src");
-
-    //eliminar solicitud
-    item.remove();
-
-    //actualiar contadores
     solicitudes--;
     conexiones++;
-    document.querySelector(".solicitudes-count").textContent = solicitudes;
-    document.querySelector(".conexiones-count").textContent = conexiones;
+    $solicitudesCount.text(solicitudes);
+    $conexionesCount.text(conexiones);
 
-    //nuevo contacto en conexiones
-    let nuevaConexion = document.createElement("div");
-    nuevaConexion.classList.add("connection_item");
-    nuevaConexion.innerHTML = `
+    let nuevaConexion = `
+      <div class="connection_item">
         <div class="connection_info">
-        <div class= "connection_avatar">
-        <img src= "${avatar}" alt="${nombre}"/>
+          <div class="connection_avatar">
+            <img src="${avatar}" alt="${nombre}" />
+          </div>
+          <span class="connection_name">${nombre}</span>
         </div>
-        <span class="connection_name">${nombre}</span>
-        </div>
-        `;
-    document.querySelector(".all_connections").appendChild(nuevaConexion);
-  });
-});
+      </div>`;
 
-//eventos para rechazar
-rechazarBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    let item = btn.closest(".connection_item");
-    item.remove();
+    $(".all_connections").append(nuevaConexion);
+  });
+
+  $(".btn_reject").on("click", function () {
+    $(this).closest(".connection_item").remove();
     solicitudes--;
-    document.querySelector(".solicitudes-count").textContent = solicitudes;
+    $solicitudesCount.text(solicitudes);
   });
-});
 
-//editar perfil
-// Evento para el botón "Editar Perfil"
-let btnEditar = document.querySelector(".edit_profile");
-let nombreElemento = document.querySelector(".profile_name");
+  $(".edit_profile").on("click", function (e) {
+    e.preventDefault();
+    let nuevoNombre = prompt("Ingresa el nuevo nombre:", $(".profile_name").text());
+    if (nuevoNombre && nuevoNombre.trim() !== "") {
+      $(".profile_name").text(nuevoNombre.trim());
+    }
+  });
 
-btnEditar.addEventListener("click", (e) => {
-  e.preventDefault(); // prevenir comportamiento por defecto del enlace
+  // Efectos visuales
+  $(".connection_item, .profile_section, .connection_section").hide().fadeIn(800);
 
-  let nuevoNombre = prompt(
-    "Ingresa el nuevo nombre:",
-    nombreElemento.textContent
+  $(".btn_accept, .btn_reject").hover(
+    function () {
+      $(this).addClass("shadow");
+    },
+    function () {
+      $(this).removeClass("shadow");
+    }
   );
-  if (nuevoNombre && nuevoNombre.trim() !== "") {
-    nombreElemento.textContent = nuevoNombre.trim();
-  }
 });
